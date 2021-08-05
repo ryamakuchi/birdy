@@ -2,7 +2,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   check:
     name: lint and test check
@@ -18,17 +18,9 @@ jobs:
             ${{ runner.os }}-node-
       - name: yarn install
         run: yarn install --pure-lockfile
-      - name: Run eslint
-        run: yarn lint
-      - name: Run test
-        run: yarn test
-      - name: Upload test coverage artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: coverage
-          path: coverage
-      - name: Show coverage in comments
-        uses: ziishaned/jest-reporter-action@v0.0.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-command: "yarn jest --coverage"
+      - name: tsc & eslint & test
+        run: yarn ci
+      - name: build-storybook
+        run: yarn build-storybook
+      - name: build
+        run: yarn build
