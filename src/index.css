@@ -11,7 +11,6 @@
   display: revert;
 }
 
-/* Preferred box-sizing value */
 *,
 *::before,
 *::after {
@@ -24,7 +23,6 @@ label {
   cursor: pointer;
 }
 
-/* For images to not be able to exceed their container */
 img {
   max-width: 100%;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Anchor } from './components/Anchor'
+import { Button } from './components/Button'
 import logo from './logo.svg'
 
 export const App: React.FC = () => {
@@ -11,9 +12,7 @@ export const App: React.FC = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
+          <Button onClick={() => setCount((count) => count + 1)}>count is: {count}</Button>
         </p>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
