@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Anchor } from './components/Anchor'
 import logo from './logo.svg'
 
 export const App: React.FC = () => {
@@ -18,18 +19,9 @@ export const App: React.FC = () => {
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
         <p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
+          <Anchor href="https://reactjs.org">Learn React</Anchor>
           {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
+          <Anchor href="https://vitejs.dev/guide/features.html">Vite Docs</Anchor>
         </p>
       </header>
     </div>
