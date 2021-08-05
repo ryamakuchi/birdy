@@ -9,8 +9,10 @@
     "lint": "eslint './**/*.{js,jsx,ts,tsx}'",
     "fix": "prettier --write './**/*.{js,jsx,ts,tsx}'",
     "test": "jest",
+    "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "ci": "concurrently 'yarn tsc' 'yarn lint' 'yarn test'"
   },
   "dependencies": {
     "react": "^17.0.0",

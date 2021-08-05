@@ -18,7 +18,9 @@ jobs:
             ${{ runner.os }}-node-
       - name: yarn install
         run: yarn install --pure-lockfile
-      - name: Run eslint
-        run: yarn lint
-      - name: Run test
-        run: yarn test
+      - name: tsc & eslint & test
+        run: yarn ci
+      - name: build-storybook
+        run: yarn build-storybook
+      - name: build
+        run: yarn build
