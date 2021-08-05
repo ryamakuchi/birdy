@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 src/__snapshots__
+storybook-static

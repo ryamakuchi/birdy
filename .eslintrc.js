@@ -27,4 +27,7 @@ module.exports = {
     },
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'import', 'prettier', 'jest'],
+  rules: {
+    'react/prop-types': 'off',
+  },
 }
