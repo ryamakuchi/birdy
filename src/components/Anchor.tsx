@@ -10,7 +10,7 @@ export interface AnchorProps {
 export const Anchor: React.FC<AnchorProps> = ({ href, children }) => (
   <a
     href={href}
-    className="text-blue-600 hover:text-blue-700 hover:underline"
+    className="text-blue-500 hover:text-blue-600 hover:underline"
     target="_blank"
     rel="noopener noreferrer"
   >
