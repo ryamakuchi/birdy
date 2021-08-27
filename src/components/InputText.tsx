@@ -61,7 +61,8 @@ export const InputText: React.FC<InputTextProps> = ({
         mode,
         isDisabled,
         sizeModePadding,
-        'block relative border-solid border-2 rounded-lg text-0 focus-within:ring focus-within:ring-opacity-50',
+        readonly ? 'border-none' : 'border-solid border-2',
+        'block relative rounded-lg text-0 focus-within:ring focus-within:ring-opacity-50',
       ].join(' ')}
     >
       <span

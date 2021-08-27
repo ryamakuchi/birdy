@@ -24,7 +24,7 @@ Default.args = {
   placeholder: 'プレースホルダー',
   type: 'text',
   size: 'medium',
-  onChange: (val) => action(val),
+  onChange: action('input!'),
 }
 
 export const HasValue = Template.bind({})
@@ -34,5 +34,38 @@ HasValue.args = {
   placeholder: 'プレースホルダー',
   type: 'text',
   size: 'medium',
-  onChange: (val) => action(val),
+  onChange: action('input!'),
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  label: 'テキスト',
+  value: 'バリュー',
+  placeholder: 'プレースホルダー',
+  type: 'text',
+  size: 'medium',
+  disabled: true,
+  onChange: action('input!'),
+}
+
+export const ReadOnly = Template.bind({})
+ReadOnly.args = {
+  label: 'テキスト',
+  value: 'バリュー',
+  placeholder: 'プレースホルダー',
+  type: 'text',
+  size: 'medium',
+  readonly: true,
+  onChange: action('input!'),
+}
+
+export const Error = Template.bind({})
+Error.args = {
+  label: 'テキスト',
+  value: 'バリュー',
+  placeholder: 'プレースホルダー',
+  type: 'text',
+  size: 'medium',
+  error: true,
+  onChange: action('input!'),
 }
