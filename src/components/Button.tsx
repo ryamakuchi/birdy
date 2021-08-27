@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={[
         sizeMode,
         mode,
-        'font-bold rounded-full text-center w-full md:w-auto focus:outline-none focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
+        'font-bold rounded-full text-center w-full md:w-auto focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
       ].join(' ')}
       disabled={disabled}
       onClick={onClick}

@@ -53,7 +53,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
       className={[
         sizeMode,
         mode,
-        'font-bold rounded-full text-center focus:outline-none focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
+        'font-bold rounded-full text-center focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
       ].join(' ')}
       disabled={disabled}
       onClick={onClick}

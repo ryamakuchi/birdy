@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Anchor } from './components/Anchor'
 import { Button } from './components/Button'
+import { InputText } from './components/InputText'
 import logo from './logo.svg'
 
 export const App: React.FC = () => {
   const [count, setCount] = useState(0)
+  const [text, setText] = useState('')
 
   return (
     <div className="App">
@@ -22,6 +24,9 @@ export const App: React.FC = () => {
           {' | '}
           <Anchor href="https://vitejs.dev/guide/features.html">Vite Docs</Anchor>
         </p>
+        <div>
+          <InputText label="InputText" value={text} onChange={(value) => setText(value)} />
+        </div>
       </header>
     </div>
   )

@@ -7,6 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors,
+      fontSize: {
+        0: '0px',
+      },
+      lineHeight: {
+        // like padding
+        12: '3rem',
+        16: '4rem',
+      },
     },
   },
   variants: {
@@ -14,6 +22,12 @@ module.exports = {
       opacity: ['disabled'],
       cursor: ['disabled'],
       backgroundColor: ['disabled'],
+      fontSize: ['focus-within'],
+      padding: ['focus-within'],
+      lineHeight: ['focus-within'],
+      color: ['focus', 'focus-within'],
+      placeholderOpacity: ['focus'],
+      transitionProperty: ['focus', 'focus-within'],
     },
   },
   plugins: [],
