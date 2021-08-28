@@ -37,6 +37,17 @@ HasValue.args = {
   onChange: action('input!'),
 }
 
+export const AutoComplete = Template.bind({})
+AutoComplete.args = {
+  label: '名前',
+  value: '',
+  placeholder: 'プレースホルダー',
+  type: 'text',
+  autoComplete: 'name',
+  size: 'medium',
+  onChange: action('input!'),
+}
+
 export const Disabled = Template.bind({})
 Disabled.args = {
   label: 'テキスト',

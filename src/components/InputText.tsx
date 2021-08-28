@@ -5,6 +5,7 @@ export interface InputTextProps {
   value?: string
   placeholder?: string
   type?: 'text' | 'password' | 'email' | 'tel' | 'url'
+  autoComplete?: string
   disabled?: boolean
   readonly?: boolean
   maxLength?: number
@@ -21,6 +22,7 @@ export const InputText: React.FC<InputTextProps> = ({
   value = '',
   placeholder = '',
   type = 'text',
+  autoComplete = '',
   disabled = false,
   readonly = false,
   maxLength = 200,
@@ -81,6 +83,7 @@ export const InputText: React.FC<InputTextProps> = ({
           value={value}
           placeholder={placeholder}
           type={type}
+          autoComplete={autoComplete}
           disabled={disabled}
           readOnly={readonly}
           maxLength={maxLength}

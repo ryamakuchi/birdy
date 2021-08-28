@@ -4,6 +4,7 @@ export interface InputNumberProps {
   label: string
   value?: number
   placeholder?: string
+  autoComplete?: string
   disabled?: boolean
   readonly?: boolean
   maxLength?: number
@@ -18,6 +19,7 @@ export const InputNumber: React.FC<InputNumberProps> = ({
   label = '',
   value = null,
   placeholder = '',
+  autoComplete = '',
   disabled = false,
   readonly = false,
   maxLength = 200,
@@ -77,6 +79,7 @@ export const InputNumber: React.FC<InputNumberProps> = ({
           value={value}
           placeholder={placeholder}
           type="number"
+          autoComplete={autoComplete}
           disabled={disabled}
           readOnly={readonly}
           maxLength={maxLength}

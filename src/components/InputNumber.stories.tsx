@@ -34,6 +34,16 @@ HasValue.args = {
   onChange: action('input!'),
 }
 
+export const AutoComplete = Template.bind({})
+AutoComplete.args = {
+  label: '生年月日の年の部分',
+  value: null,
+  placeholder: '20',
+  autoComplete: 'bday-year',
+  size: 'medium',
+  onChange: action('input!'),
+}
+
 export const Disabled = Template.bind({})
 Disabled.args = {
   label: 'ナンバー',

@@ -20,7 +20,6 @@ Default.args = {
   label: 'テキスト',
   value: '',
   placeholder: 'プレースホルダー',
-  type: 'text',
   size: 'medium',
   onChange: action('input!'),
 }
@@ -30,7 +29,16 @@ HasValue.args = {
   label: 'テキスト',
   value: 'てきすと',
   placeholder: 'プレースホルダー',
-  type: 'text',
+  size: 'medium',
+  onChange: action('input!'),
+}
+
+export const AutoComplete = Template.bind({})
+AutoComplete.args = {
+  label: '住所',
+  value: null,
+  placeholder: '東京都',
+  autoComplete: 'street-address',
   size: 'medium',
   onChange: action('input!'),
 }
@@ -40,7 +48,6 @@ Disabled.args = {
   label: 'テキスト',
   value: 'てきすと',
   placeholder: 'プレースホルダー',
-  type: 'text',
   size: 'medium',
   disabled: true,
   onChange: action('input!'),
@@ -51,7 +58,6 @@ Readonly.args = {
   label: 'テキスト',
   value: 'てきすと',
   placeholder: 'プレースホルダー',
-  type: 'text',
   size: 'medium',
   readonly: true,
   onChange: action('input!'),
@@ -62,7 +68,6 @@ Error.args = {
   label: 'テキスト',
   value: 'てきすと',
   placeholder: 'プレースホルダー',
-  type: 'text',
   size: 'medium',
   error: true,
   onChange: action('input!'),
@@ -73,7 +78,6 @@ FixedHeight.args = {
   label: 'テキスト',
   value: 'てきすと',
   placeholder: 'プレースホルダー',
-  type: 'text',
   size: 'medium',
   fixedHeight: '200px',
   onChange: action('input!'),

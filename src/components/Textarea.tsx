@@ -4,6 +4,7 @@ export interface TextareaProps {
   label: string
   value?: string
   placeholder?: string
+  autoComplete?: string
   rows?: number
   fixedHeight?: `${number}px`
   disabled?: boolean
@@ -20,6 +21,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   label = '',
   value = '',
   placeholder = '',
+  autoComplete = '',
   rows = 2,
   fixedHeight = null,
   disabled = false,
@@ -94,8 +96,9 @@ export const Textarea: React.FC<TextareaProps> = ({
             sizeModeText,
             'block w-full text-black placeholder-gray-500 placeholder-opacity-0 whitespace-pre transition-all focus:placeholder-opacity-100',
           ].join(' ')}
-          rows={rows}
           style={{ height: fixedHeight ?? height }}
+          rows={rows}
+          autoComplete={autoComplete}
           placeholder={placeholder}
           disabled={disabled}
           readOnly={readonly}
