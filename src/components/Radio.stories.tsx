@@ -2,62 +2,62 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { action } from '@storybook/addon-actions'
-import { Checkbox, CheckboxProps } from './Checkbox'
+import { Radio, RadioProps } from './Radio'
 
 export default {
-  title: 'Checkbox',
-  component: Checkbox,
+  title: 'Radio',
+  component: Radio,
 } as Meta
 
-const Template: Story<CheckboxProps> = (args) => (
+const Template: Story<RadioProps> = (args) => (
   <div>
-    <Checkbox {...args}>Checkbox</Checkbox>
+    <Radio {...args}>Radio</Radio>
   </div>
 )
 
 export const Default = Template.bind({})
 Default.args = {
-  name: 'checkbox',
-  value: 'check',
+  name: 'radio',
+  value: 'radio',
+  checkedValue: '',
   size: 'medium',
-  checkedValues: [],
-  disabled: false,
   readonly: false,
+  required: false,
   error: false,
   onChange: action('value!'),
 }
 
 export const Checked = Template.bind({})
 Checked.args = {
-  name: 'checkbox',
-  value: 'check',
-  checkedValues: ['check'],
+  name: 'radio',
+  value: 'radio',
+  checkedValue: 'radio',
   onChange: action('value!'),
 }
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-  name: 'checkbox',
-  value: 'check',
-  checkedValues: [],
+  name: 'radio',
+  value: 'radio',
+  checkedValue: 'radio',
   disabled: true,
   onChange: action('value!'),
 }
 
 export const Readonly = Template.bind({})
 Readonly.args = {
-  name: 'checkbox',
-  value: 'check',
-  checkedValues: [],
+  name: 'radio',
+  value: 'radio',
+  checkedValue: 'radio',
   readonly: true,
   onChange: action('value!'),
 }
 
 export const Error = Template.bind({})
 Error.args = {
-  name: 'checkbox',
-  value: 'check',
-  checkedValues: [],
+  name: 'radio',
+  value: 'radio',
+  checkedValue: 'radio',
   error: true,
   onChange: action('value!'),
 }
