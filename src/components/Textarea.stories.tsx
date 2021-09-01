@@ -36,7 +36,7 @@ HasValue.args = {
 export const AutoComplete = Template.bind({})
 AutoComplete.args = {
   label: '住所',
-  value: null,
+  value: '',
   placeholder: '東京都',
   autoComplete: 'street-address',
   size: 'medium',

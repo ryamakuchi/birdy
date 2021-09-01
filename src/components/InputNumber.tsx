@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface InputNumberProps {
   label: string
-  value?: number
+  value?: number | null
   placeholder?: string
   autoComplete?: string
   disabled?: boolean
@@ -76,7 +76,7 @@ export const InputNumber: React.FC<InputNumberProps> = ({
             sizeModeText,
             'block w-full text-black placeholder-gray-500 placeholder-opacity-0 transition-all focus:placeholder-opacity-100',
           ].join(' ')}
-          value={value}
+          value={value ?? undefined}
           placeholder={placeholder}
           type="number"
           autoComplete={autoComplete}
