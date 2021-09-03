@@ -25,6 +25,7 @@ module.exports = {
       cursor: ['disabled'],
       color: ['focus', 'focus-within'],
       backgroundColor: ['disabled'],
+      backgroundImage: ['focus-within'],
       border: ['focus-within'],
       fontSize: ['focus-within'],
       lineHeight: ['focus-within'],
