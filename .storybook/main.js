@@ -13,4 +13,7 @@ module.exports = {
       },
     },
   ],
+  core: {
+    builder: 'storybook-builder-vite',
+  }
 }
