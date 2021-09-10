@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { classNames } from '../lib/classNames'
 
 export interface ButtonIconProps {
   type?: 'button' | 'submit' | 'reset'
@@ -50,11 +51,11 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
   return (
     <button
       type={type}
-      className={[
+      className={classNames(
         sizeMode,
         mode,
-        'font-bold rounded-full text-center focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
-      ].join(' ')}
+        'font-bold rounded-full text-center focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed'
+      )}
       disabled={disabled}
       onClick={onClick}
     >

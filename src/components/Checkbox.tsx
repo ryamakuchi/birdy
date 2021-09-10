@@ -1,7 +1,7 @@
 import React from 'react'
-
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { classNames } from '../lib/classNames'
 
 export interface CheckboxProps {
   name: string
@@ -29,8 +29,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
 }) => {
   const mode = error
-    ? `border-red-500 focus-within:ring-red-500 focus-within:text-red-600`
-    : `border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500 focus-within:text-blue-600`
+    ? 'border-red-500 focus-within:ring-red-500 focus-within:text-red-600'
+    : 'border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500 focus-within:text-blue-600'
   const checkedMode = error ? 'border-red-500 bg-red-500' : 'border-blue-500 bg-blue-500'
   const sizeMode =
     size === 'small'
@@ -55,22 +55,22 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <label
-      className={[
+      className={classNames(
         'flex items-center',
         sizeMode.label,
-        disabled ? 'cursor-not-allowed' : '',
-        readonly ? 'cursor-default' : '',
-      ].join(' ')}
+        disabled && 'cursor-not-allowed',
+        readonly && 'cursor-default'
+      )}
     >
       <div
-        className={[
+        className={classNames(
           'relative flex justify-center items-center border-solid border-2 focus-within:ring focus-within:ring-opacity-50',
           mode,
           sizeMode.input,
           checkedValues.includes(value) ? checkedMode : 'bg-white',
-          disabled ? 'opacity-50 bg-gray-100 cursor-not-allowed' : '',
-          readonly ? 'opacity-50 cursor-default focus-within:opacity-100' : 'cursor-pointer',
-        ].join(' ')}
+          disabled && 'opacity-50 bg-gray-100 cursor-not-allowed',
+          readonly ? 'opacity-50 cursor-default focus-within:opacity-100' : 'cursor-pointer'
+        )}
       >
         <input
           type="checkbox"
@@ -79,7 +79,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           checked={checkedValues.includes(value)}
           disabled={disabled}
           required={required}
-          className={['appearance-none absolute', sizeMode.input].join(' ')}
+          className={classNames('appearance-none absolute', sizeMode.input)}
           onChange={(event) => {
             if (!readonly) {
               onChange(event.target.checked ? [...checkedValues, value] : checkedValues.filter((v) => v !== value))

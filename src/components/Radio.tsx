@@ -1,4 +1,5 @@
 import React from 'react'
+import { classNames } from '../lib/classNames'
 
 export interface RadioProps {
   name: string
@@ -26,8 +27,8 @@ export const Radio: React.FC<RadioProps> = ({
   onChange,
 }) => {
   const mode = error
-    ? `border-red-500 focus-within:ring-red-500`
-    : `border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500`
+    ? 'border-red-500 focus-within:ring-red-500'
+    : 'border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500'
   const sizeMode =
     size === 'small'
       ? {
@@ -52,22 +53,22 @@ export const Radio: React.FC<RadioProps> = ({
   return (
     <label
       key={value}
-      className={[
+      className={classNames(
         'flex items-center',
         sizeMode.label,
-        disabled ? 'cursor-not-allowed' : '',
-        readonly ? 'cursor-default' : '',
-      ].join(' ')}
+        disabled && 'cursor-not-allowed',
+        readonly && 'cursor-default'
+      )}
     >
       <div
-        className={[
+        className={classNames(
           'relative flex justify-center items-center bg-white border-solid border-2 rounded-full transition-all focus-within:ring focus-within:ring-opacity-50',
           mode,
           sizeMode.input,
-          checkedValue === value ? `border-radio ${error ? 'border-red-500' : 'border-blue-500'}` : '',
-          disabled ? 'opacity-50 bg-gray-100 cursor-not-allowed' : '',
-          readonly ? 'opacity-50 focus-within:opacity-100' : 'cursor-pointer',
-        ].join(' ')}
+          checkedValue === value && `border-radio ${error ? 'border-red-500' : 'border-blue-500'}`,
+          disabled && 'opacity-50 bg-gray-100 cursor-not-allowed',
+          readonly ? 'opacity-50 focus-within:opacity-100' : 'cursor-pointer'
+        )}
       >
         <input
           type="radio"
@@ -76,7 +77,7 @@ export const Radio: React.FC<RadioProps> = ({
           checked={checkedValue === value}
           disabled={disabled}
           required={required}
-          className={['appearance-none absolute', sizeMode.input].join(' ')}
+          className={classNames('appearance-none absolute', sizeMode.input)}
           onChange={() => {
             if (!readonly) onChange(value)
           }}

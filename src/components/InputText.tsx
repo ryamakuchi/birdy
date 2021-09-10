@@ -1,4 +1,5 @@
 import React from 'react'
+import { classNames } from '../lib/classNames'
 
 export interface InputTextProps {
   label: string
@@ -34,10 +35,11 @@ export const InputText: React.FC<InputTextProps> = ({
   onChange,
 }) => {
   const mode = error
-    ? `border-red-500 focus-within:ring-red-500 focus-within:text-red-600${value && ' text-red-600'}`
-    : `border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500 focus-within:text-blue-600${
-        value && ' text-gray-500'
-      }`
+    ? classNames('border-red-500 focus-within:ring-red-500 focus-within:text-red-600', value && 'text-red-600')
+    : classNames(
+        'border-gray-400 focus-within:border-blue-500 focus-within:ring-blue-500 focus-within:text-blue-600',
+        value && 'text-gray-500'
+      )
   const sizeModeText =
     size === 'small' ? 'text-sm' : size === 'medium' ? 'text-base' : size === 'large' ? 'text-lg' : ''
   const sizeModeTextFocusWithin =
@@ -50,36 +52,36 @@ export const InputText: React.FC<InputTextProps> = ({
       : ''
   const sizeModePadding =
     size === 'small'
-      ? `px-2 py-3 focus-within:pt-5 focus-within:pb-1${value && ' pt-5 pb-1'}`
+      ? classNames('px-2 py-3 focus-within:pt-5 focus-within:pb-1', value && 'pt-5 pb-1')
       : size === 'medium'
-      ? `px-3 py-4 focus-within:pt-6 focus-within:pb-2${value && ' pt-6 pb-2'}`
+      ? classNames('px-3 py-4 focus-within:pt-6 focus-within:pb-2', value && 'pt-6 pb-2')
       : size === 'large'
-      ? `px-4 py-5 focus-within:pt-7 focus-within:pb-3${value && ' pt-7 pb-3'}`
+      ? classNames('px-4 py-5 focus-within:pt-7 focus-within:pb-3', value && 'pt-7 pb-3')
       : ''
   const isDisabled = disabled ? 'bg-gray-100 cursor-not-allowed' : ''
   return (
     <label
-      className={[
+      className={classNames(
         mode,
         isDisabled,
         sizeModePadding,
         readonly ? 'border-none' : 'border-solid border-2',
-        'block relative rounded-lg text-0 focus-within:ring focus-within:ring-opacity-50',
-      ].join(' ')}
+        'block relative rounded-lg text-0 focus-within:ring focus-within:ring-opacity-50'
+      )}
     >
       <span
-        className={[
+        className={classNames(
           sizeModeTextFocusWithin,
           'transition-all focus-within:leading-normal',
-          value && 'leading-normal',
-        ].join(' ')}
+          value && 'leading-normal'
+        )}
       >
         <span className="absolute top-1">{label}</span>
         <input
-          className={[
+          className={classNames(
             sizeModeText,
-            'block w-full text-black placeholder-gray-500 placeholder-opacity-0 transition-all focus:placeholder-opacity-100',
-          ].join(' ')}
+            'block w-full text-black placeholder-gray-500 placeholder-opacity-0 transition-all focus:placeholder-opacity-100'
+          )}
           value={value}
           placeholder={placeholder}
           type={type}

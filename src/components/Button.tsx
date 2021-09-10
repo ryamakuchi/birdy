@@ -1,4 +1,5 @@
 import React from 'react'
+import { classNames } from '../lib/classNames'
 
 export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
@@ -47,11 +48,11 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={[
+      className={classNames(
         sizeMode,
         mode,
-        'font-bold rounded-full text-center w-full md:w-auto focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed',
-      ].join(' ')}
+        'font-bold rounded-full text-center w-full md:w-auto focus:ring focus:border-blue-300 disabled:opacity-50 disabled:cursor-not-allowed'
+      )}
       disabled={disabled}
       onClick={onClick}
     >
