@@ -7,7 +7,7 @@ import { InputText, InputTextProps } from './InputText'
 export default {
   title: 'InputText',
   component: InputText,
-} as Meta
+} as Meta<typeof InputText>
 
 const Template: Story<InputTextProps> = (args) => {
   return (

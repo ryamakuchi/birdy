@@ -7,7 +7,7 @@ import { Checkbox, CheckboxProps } from './Checkbox'
 export default {
   title: 'Checkbox',
   component: Checkbox,
-} as Meta
+} as Meta<typeof Checkbox>
 
 const Template: Story<CheckboxProps> = (args) => (
   <div>

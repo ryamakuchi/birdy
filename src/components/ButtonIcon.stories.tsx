@@ -8,7 +8,7 @@ import { faKiwiBird } from '@fortawesome/free-solid-svg-icons'
 export default {
   title: 'ButtonIcon',
   component: ButtonIcon,
-} as Meta
+} as Meta<typeof ButtonIcon>
 
 const Template: Story<ButtonIconProps> = (args) => (
   <div>

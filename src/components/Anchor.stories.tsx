@@ -6,7 +6,7 @@ import { Anchor, AnchorProps } from './Anchor'
 export default {
   title: 'Anchor',
   component: Anchor,
-} as Meta
+} as Meta<typeof Anchor>
 
 const Template: Story<AnchorProps> = (args) => (
   <div>
