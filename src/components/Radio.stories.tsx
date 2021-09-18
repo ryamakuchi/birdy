@@ -7,7 +7,7 @@ import { Radio, RadioProps } from './Radio'
 export default {
   title: 'Radio',
   component: Radio,
-} as Meta
+} as Meta<typeof Radio>
 
 const Template: Story<RadioProps> = (args) => (
   <div>

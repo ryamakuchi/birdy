@@ -3,18 +3,21 @@ import { Story, Meta } from '@storybook/react'
 
 import { Anchor, AnchorProps } from './Anchor'
 
+const args: AnchorProps = {
+  href: 'https://github.com/ryamakuchi/birdy',
+  children: 'birdy',
+}
+
 export default {
   title: 'Anchor',
   component: Anchor,
-} as Meta
+  args,
+} as Meta<typeof Anchor>
 
 const Template: Story<AnchorProps> = (args) => (
   <div>
-    <Anchor {...args}>birdy</Anchor>
+    <Anchor {...args} />
   </div>
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  href: 'https://github.com/ryamakuchi/birdy',
-}

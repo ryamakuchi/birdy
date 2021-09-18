@@ -7,7 +7,7 @@ import { Textarea, TextareaProps } from './Textarea'
 export default {
   title: 'Textarea',
   component: Textarea,
-} as Meta
+} as Meta<typeof Textarea>
 
 const Template: Story<TextareaProps> = (args) => (
   <div>

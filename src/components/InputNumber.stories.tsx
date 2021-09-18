@@ -7,7 +7,7 @@ import { InputNumber, InputNumberProps } from './InputNumber'
 export default {
   title: 'InputNumber',
   component: InputNumber,
-} as Meta
+} as Meta<typeof InputNumber>
 
 const Template: Story<InputNumberProps> = (args) => {
   return (
